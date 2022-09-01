@@ -1,12 +1,12 @@
 import fitz
-with fitz.open("/driveone/excel/file.pdf") as doc:
+with fitz.open("urfile.pdf") as doc:
     text = ""
     for page in doc:
         text += page.get_text()
 
 text = text.split("\n")
 
-index = text.index("3-2 ис")
+index = text.index("Текст для индексации")
 
 message = f"""{text[index+1]} {text[index+2]} {text[index+3]}
 {text[index+4]} {text[index+5]} {text[index+6]}
